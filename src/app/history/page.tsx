@@ -4,7 +4,7 @@ import s from "./History.module.scss"
 // import components
 import Container from '@/components/container'
 
-const History = () => {
+export default function History(){
   return (
     <>
       <main className={s.history}>
@@ -25,5 +25,3 @@ const History = () => {
     </>
   )
 }
-
-export default History

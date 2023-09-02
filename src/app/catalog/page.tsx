@@ -19,9 +19,8 @@ import icon from "../../assets/images/arrow.png"
 // import slider for price filter
 import Slider from "react-slider"
 
-const Catalog = () => {
+export default function Catalog (){
   const [products, setProducts] = useState(Object.values(productsList));
-  const [copyProducts] = useState(Object.values(productsList));
 
   const [priceOpen, setPriceOpen] = useState<boolean>(false);
   const [producersOpen, setProducersOpen] = useState<boolean>(false);
@@ -52,8 +51,9 @@ const Catalog = () => {
   };
 
   // get items filter
-  const colors = [...new Set(copyProducts.flatMap((product) => product.colors))];
-  const producers = [...new Set(copyProducts.flatMap((product: any) => product.producer))];
+
+  const colors = ["Чорний", "Онікс", "Мигдаль", "Капучіно", "Білий", "Мідь", "Шампань", "Бежевий", "Сірий", "Блакитний", "Молочний", "Рожевий", "Жовтий", "Зелений", "Хром", "Графіт", "Сахара", "Бронзовий", "Антрацит", "Ваніль", "Сріблястий"]
+  const producers = ["Franke", "Miele", "Bosch"];
 
   // price filter
 
@@ -63,7 +63,7 @@ const Catalog = () => {
 
   // checkbox filter
 
-  const initFilter: object = {
+  const initFilter: any = {
     producer: [],
     color: []
   }
@@ -209,5 +209,3 @@ const Catalog = () => {
     </>
   )
 }
-
-export default Catalog

@@ -14,7 +14,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { clearFavorites } from '../store/features/favorites/favoritesSlice'
 
 
-const Favorites = () => {
+export default function Favorites(){
   const dispatch = useDispatch();
   const items = useSelector((state: any) => state.favorites.items);
   const [popup, setPopup] = useState<boolean>(false);
@@ -59,5 +59,3 @@ const Favorites = () => {
     </>
   )
 }
-
-export default Favorites

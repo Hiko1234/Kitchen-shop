@@ -32,7 +32,7 @@ const SearchInput = () => {
     return (
         <>
             <Container key="container">
-                <Element name="search">
+                <Element name="search" key="elementSearch">
                     <div className={s.search}>
                         <div className={s.search__container}>
                             <h4 className={s.search__title}>Пошук товарів</h4>
@@ -49,8 +49,8 @@ const SearchInput = () => {
                                     {searchProducts.length > 0 ? (
                                         <>
                                             {searchProducts.map((product) => (
-                                                <div className={s.searchWindow__wrapper}>
-                                                    <SearchProducts key={product.id} product={product} onClick={onClick} />
+                                                <div className={s.searchWindow__wrapper} key={product.id}>
+                                                    <SearchProducts product={product} onClick={onClick} />
                                                 </div>
                                             ))}
                                         </>

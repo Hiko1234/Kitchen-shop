@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { clearProduct } from '@/app/store/features/cart/cartSlice'
 
-const CartPage = () => {
+export default function CartPage (){
     const dispatch = useDispatch();
     const items = useSelector((state: any) => state.cart.items);
     const [price, setPrice] = useState<number>();
@@ -78,5 +78,3 @@ const CartPage = () => {
         </>
     )
 }
-
-export default CartPage

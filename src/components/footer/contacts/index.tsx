@@ -28,7 +28,7 @@ const Contacts = () => {
             <div className={s.contacts}>
                 <h6 className={s.contacts__title}>Contact Us</h6>
                 {contacts.map((contact) => (
-                    <Link className={s.contacts__contact} href={contact.type == "email" ? `mailto: ${contact.text}` : `tel: ${contact.text}`}>
+                    <Link className={s.contacts__contact} key={contact.text} href={contact.type == "email" ? `mailto: ${contact.text}` : `tel: ${contact.text}`}>
                         <div className={s.contacts__contact_wrapper}>
                             <Image className={s.contacts__contact_img} src={contact.icon} alt={contact.text} width={24} height={24} />
                             <p>{contact.text}</p>

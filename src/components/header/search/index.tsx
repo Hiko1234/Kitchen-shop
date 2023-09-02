@@ -49,7 +49,7 @@ const Search = () => {
 
   return (
     <>
-      <Link className={s.search} to="search" smooth={true} duration={300}><Image className={s.search__img} src={icon} alt="Search" width={22.5} height={22.5} /></Link>
+      <Link className={s.search} to="search" smooth={true} duration={300} key="linkTo"><Image className={s.search__img} src={icon} alt="Search" width={22.5} height={22.5} /></Link>
 
       <button className={s.searchAdaptive} onClick={handleForm}><Image className={s.search__img} src={icon} alt="Search" width={22.5} height={22.5} /></button>
 
@@ -67,8 +67,8 @@ const Search = () => {
             {searchProducts.length > 0 ? (
               <>
                 {searchProducts.map((product) => (
-                  <div className={s.searchWindow__wrapper}>
-                    <SearchProducts key={product.id} product={product} onClick={onClick} />
+                  <div className={s.searchWindow__wrapper} key={product.id}>
+                    <SearchProducts product={product} onClick={onClick} />
                   </div>
                 ))}
               </>

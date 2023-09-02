@@ -36,7 +36,7 @@ const Pagination = (props: any) => {
     useEffect(() => {
         paginate(1);
         setCurrentPage(1);
-    }, [totalPages])
+    }, [totalPages, pageNumbers])
 
     return (
         <>

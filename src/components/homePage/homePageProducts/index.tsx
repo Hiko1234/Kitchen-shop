@@ -19,7 +19,7 @@ const HomePageProducts = () => {
 
     useEffect(() => {
         setRandomProducts(getRandomObjects(products, 4));
-    }, [])
+    }, [products])
 
     return (
         <>

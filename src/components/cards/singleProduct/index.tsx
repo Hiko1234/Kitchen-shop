@@ -30,7 +30,7 @@ const CardSingleProduct = (props: any) => {
 
   useEffect(() => {
     setRandomProducts(getRandomObjects(products, 4));
-  }, [])
+  }, [products])
 
 
 
@@ -44,7 +44,7 @@ const CardSingleProduct = (props: any) => {
             </div>
             <div className={s.card__images_secondaryImages}>
               {product.images.slice(0, 5).map((img: any, index: number) => (
-                <Image key={`image${index}`} className={image == index ? `${s.card__images_secondaryImg} ${s.card__images_secondaryImgActive}` : s.card__images_secondaryImg} key={index} src={img} alt={product.title} width={110} height={110} onClick={() => setImage(index)} />
+                <Image key={`image${index}`} className={image == index ? `${s.card__images_secondaryImg} ${s.card__images_secondaryImgActive}` : s.card__images_secondaryImg} src={img} alt={product.title} width={110} height={110} onClick={() => setImage(index)} />
               ))}
             </div>
           </div>
