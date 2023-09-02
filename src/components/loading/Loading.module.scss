@@ -1,0 +1,27 @@
+// import variables
+@import "../../app/variables.scss";
+
+.loading{
+    width: 5em;
+    height: 5em;
+    border-top: 1em solid $mainRed;
+    border-right: 1em solid transparent;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spinner 2.5s linear infinite;
+
+    &__circle{
+        width: 1em;
+        height: 1em;
+        background-color: $mainRed;
+        border-radius: 50%;
+        margin-left: 4.3em;
+        margin-top: -0.1em;
+    }
+}
+
+@keyframes spinner {
+    100% {
+        transform: rotate(360deg);
+    }
+}

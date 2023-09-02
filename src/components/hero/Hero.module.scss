@@ -1,0 +1,15 @@
+// import variables
+@import "../../app/variables.scss";
+
+.hero{
+    width: 100%;
+    height: 553px;
+    margin-bottom: 90px;
+    @media(max-width: $mp5){
+        margin-bottom: 50px;
+    }
+    background-image: url(../../assets/images/home/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

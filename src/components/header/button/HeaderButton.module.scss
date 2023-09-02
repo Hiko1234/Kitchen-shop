@@ -1,0 +1,19 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.button{
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+    text-decoration: none;
+    background-color: $mainRed;
+    transition: 0.3s;
+    padding: 14px 45px;
+    @media(max-width: $mp5){
+        display: none;
+    }
+
+    &:hover{
+        background-color: $redHover;
+    }
+}

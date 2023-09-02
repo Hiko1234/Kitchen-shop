@@ -1,0 +1,114 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.form {
+
+    &__inputWrapper {
+        position: relative;
+    }
+
+    &__error {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        font-size: 30px;
+        font-weight: 700;
+        color: $mainRed;
+
+        @media(max-width: $mp7) {
+            right: 10px;
+        }
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 14px 0;
+        border: none;
+        border-bottom: 1px solid $mainRed;
+        font-size: 18px;
+        font-weight: 400;
+        color: $black;
+        background-color: transparent;
+        outline: none;
+
+        &::placeholder {
+            font-size: 18px;
+            font-weight: 400;
+            color: $placeholder;
+        }
+    }
+
+    &__inputError {
+        color: $mainRed;
+        font-weight: 700;
+    }
+
+    &__buttons {
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        @media(max-width: $mp5) {
+            padding-top: 25px;
+        }
+
+        @media(max-width: $mp7) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_submit {
+            width: 295px;
+            height: 51px;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 500;
+            color: $white;
+            background-color: $mainRed;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.3s;
+
+            @media(max-width: $mp7) {
+                width: 100%;
+            }
+        }
+
+        &_submitActive {
+            background-color: transparent;
+            border: 1px solid $mainRed;
+            color: $mainRed;
+            &:hover {
+                background-color: $mainRed;
+                color: $white;
+            }
+        }
+
+        &_link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 295px;
+            height: 51px;
+            box-sizing: border-box;
+            border: 1px solid $mainRed;
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            color: $mainRed;
+            background-color: transparent;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $mainRed;
+                color: $white;
+            }
+
+            @media(max-width: $mp7) {
+                width: 100%;
+            }
+        }
+    }
+}

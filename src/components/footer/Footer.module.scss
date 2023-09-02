@@ -1,0 +1,25 @@
+// import variables
+@import "../../app/variables.scss";
+
+.footer{
+    background-color: $black;
+    padding: 92px 0;
+    @media(max-width: $mp5){
+        padding: 50px 0;
+    }
+
+    &__body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        @media(max-width: $mp5){
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        @media(max-width: $mp6){
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+}

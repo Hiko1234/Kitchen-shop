@@ -1,0 +1,78 @@
+// import variables
+@import "../../app/variables.scss";
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 40px 0 0 0;
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__prev {
+        width: 24px;
+        height: 24px;
+        background-color: $pagination;
+        border-radius: 5px 0 0 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: $mainRed;
+        }
+
+        &_img {
+            object-fit: contain;
+            object-position: center;
+            transform: rotate(90deg);
+        }
+    }
+    &__prevDisActive{
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    &__page {
+        width: 24px;
+        height: 24px;
+        background-color: $pagination;
+        font-size: 13px;
+        font-weight: 600;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    &__pageActive {
+        background-color: $mainRed;
+    }
+
+    &__next {
+        width: 24px;
+        height: 24px;
+        background-color: $pagination;
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: $mainRed;
+        }
+
+        &_img {
+            object-fit: contain;
+            object-position: center;
+            transform: rotate(-90deg);
+        }
+    }
+    &__nextDisActive{
+        overflow: hidden;
+        visibility: hidden;
+    }
+}

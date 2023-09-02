@@ -1,0 +1,15 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.addToCart{
+    width: 60px;
+    height: 60px;
+    background-color: $mainRed;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+        background-color: $redHover;
+    }
+}

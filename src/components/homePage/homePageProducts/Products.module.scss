@@ -1,0 +1,26 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.products{
+    padding-bottom: 90px;
+    @media(max-width: $mp5){
+        padding-bottom: 50px;
+    }
+
+    &__title{
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: $black;
+    }
+    &__cards{
+        display: flex;
+        gap: 5px;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media(max-width: $mp4){
+            justify-content: space-evenly;
+        }
+    }
+}

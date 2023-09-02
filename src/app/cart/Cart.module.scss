@@ -1,0 +1,129 @@
+// import variables
+@import "../variables.scss";
+
+.cart{
+    padding: 81px 0 70px;
+    @media(max-width: $mp5){
+        padding: 69px 0;
+    }
+
+    &__title{
+        font-size: 32px;
+        font-weight: 600;
+        color: $black;
+        margin: 0;
+        padding: 35px 0 10px 0;
+        text-align: center;
+    }
+
+    &__functional{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+
+    &__functional_btn{
+        position: relative;
+        font-size: 16px;
+        font-weight: 500;
+        color: $mainRed;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        transition: 0.3s;
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            content: "";
+            width: 0;
+            height: 3px;
+            border-radius: 2px;
+            background-color: $mainRed;
+            transition: 0.3s;
+        }
+    }
+
+    &__cards{
+        max-height: 292px;
+        padding: 10px;
+        overflow-y: auto;
+        @media(max-width: $mp4){
+            max-height: 300px;
+        }
+        @media(max-width: $mp5){
+            max-height: 286px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        @media(max-width: $mp8){
+            max-height: 294px;
+        }
+    }
+
+    &__totalPrice{
+        max-width: 676px;
+        padding: 50px 0 17px;
+        margin: 0 auto;
+        border-bottom: 1px solid $darkGray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        font-size: 24px;
+        font-weight: 600;
+        @media(max-width: $mp5){
+            font-size: 22px;
+        }
+        @media(max-width: $mp7){
+            flex-direction: column;
+            max-width: fit-content;
+        }
+        @media(max-width: $mp8){
+            font-size: 20px;
+        }
+
+        &_length{
+            color: $black;
+            margin: 0;
+        }
+
+        &_price{
+            color: $mainRed;
+            margin: 0;
+        }
+    }
+
+    &__empty {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: center;
+        padding: 30px 0;
+
+        &_text {
+            color: $mainRed;
+            margin-bottom: 20px;
+        }
+
+        &_btn {
+            text-decoration: none;
+            color: $white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 14px 45px;
+            background-color: $mainRed;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $redHover;
+            }
+        }
+    }
+}

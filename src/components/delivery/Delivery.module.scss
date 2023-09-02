@@ -1,0 +1,47 @@
+// import variables
+@import "../../app/variables.scss";
+
+.delivery {
+    max-width: 676px;
+    padding: 30px 0 17px;
+    margin: 0 auto;
+    border-bottom: 1px solid $darkGray;
+
+    &__handle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        span {
+            font-size: 24px;
+            font-weight: 600;
+            color: $black;
+            flex: 1 1 auto;
+        }
+
+        &_img {
+            transition: 1s;
+        }
+
+        &_imgActive {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__form {
+        font-size: 16px;
+        font-weight: 500;
+        color: $text;
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    &__formActive{
+        max-height: 1000px;
+        opacity: 1;
+        padding-top: 30px;
+    }
+}

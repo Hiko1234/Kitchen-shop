@@ -1,0 +1,9 @@
+// import variables
+@import "./variables.scss";
+
+.home{
+    padding: 81px 0 70px;
+    @media(max-width: $mp5){
+        padding: 69px 0;
+    }
+}

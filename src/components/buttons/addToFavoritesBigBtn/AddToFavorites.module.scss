@@ -1,0 +1,33 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.addToFavorites{
+    width: 215px;
+    height: 51px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    font-weight: 500;
+    color: $mainRed;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+
+    @media(max-width: $mp5) {
+        border: 1px solid $mainRed;
+    }
+
+    @media(max-width: $mp7) {
+        width: 100%;
+    }
+
+    &:hover{
+        border: 1px solid $mainRed;
+    }
+    &__img{
+        object-fit: contain;
+        object-position: center;
+    }
+}

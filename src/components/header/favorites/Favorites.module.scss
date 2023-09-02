@@ -1,0 +1,41 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.favorites {
+    position: relative;
+
+    &__link {
+        text-decoration: none;
+        color: $white;
+    }
+
+    &__lenght {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+
+        &_wrapper {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_img {
+            object-fit: contain;
+            object-position: center;
+        }
+
+        &_counter {
+            font-size: 10px;
+            font-weight: 500;
+            color: $white;
+            position: absolute;
+            top: 4px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}

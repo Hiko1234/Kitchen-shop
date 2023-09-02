@@ -1,0 +1,29 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.addToCart {
+    display: block;
+    width: 305px;
+    height: 51px;
+    border: none;
+    background-color: $mainRed;
+    font-size: 20px;
+    font-weight: 500;
+    color: $white;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $redHover;
+    }
+
+    @media(max-width: $mp3) {
+        margin-left: auto;
+    }
+
+    @media(max-width: $mp5) {
+        margin: 0;
+    }
+    @media(max-width: $mp7) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,93 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.search {
+    
+    max-width: 1105px;
+    height: 238px;
+    margin: -209px auto 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 20px 0px #0000001A;
+    background-color: $white;
+    @media(max-width: $mp5){
+        display: none;
+    }
+    &__container {
+        position: relative;
+        width: 825px;
+        margin: 0 auto;
+        @media(max-width: $mp4){
+            width: 700px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $mainRed;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    &__form {
+        position: relative;
+    }
+
+    &__inputWrapper{
+        width: 100%;
+    }
+    &__input {
+        padding: 20px 73px 20px 35px;
+        width: calc(100% - 110px);
+        border: 1px solid $mainRed;
+        font-size: 18px;
+        font-weight: 400;
+        color: $black;
+        background-color: $white;
+        outline: none;
+
+        &::placeholder {
+            font-size: 18px;
+            font-weight: 400;
+            color: $placeholder;
+        }
+    }
+    &__icon{
+        position: absolute;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.searchWindow{
+    position: absolute;
+    z-index: 1;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    min-height: 22px;
+    max-height: 370px;
+    background-color: $white;
+    border: 1px solid $mainRed;
+    overflow-y: auto;
+    @media (max-height: 650px){
+        max-height: 400px;
+    }
+    @media (max-height: 550px){
+        max-height: 300px;
+    }
+    @media (max-height: 400px){
+        max-height: 250px;
+    }
+
+    &__wrapper{
+        margin: 20px;
+    }
+    &__productNotFound{
+        margin: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        color: $black;
+    }
+}

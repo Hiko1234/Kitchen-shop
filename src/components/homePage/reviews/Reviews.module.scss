@@ -1,0 +1,26 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.reviews {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media(max-width: $mp4) {
+        justify-content: space-evenly;
+    }
+}
+
+.reviewsTitle {
+    font-size: 32px;
+    font-weight: 600;
+    color: $black;
+    margin: 0;
+    padding-bottom: 40px;
+
+    @media (max-width: $mp5) {
+        padding-bottom: 20px;
+    }
+}

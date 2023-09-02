@@ -1,0 +1,47 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.nav{
+    @media(max-width: $mp4){
+        display: none;
+    }
+    
+    &__list{
+        display: flex;
+        align-items: center;
+        gap: 69px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        @media(max-width: $mp2){
+            gap: calc(25px + (69 - 25) * ((100vw - 768px) / (1225 - 768)));
+        }
+
+        &_link{
+            position: relative;
+            text-decoration: none;
+            color: $mainRed;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                content: "";
+                width: 0;
+                height: 3px;
+                border-radius: 2px;
+                background-color: $mainRed;
+                transition: 0.3s;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+// import variables
+@import "../../app/variables.scss";
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 16.5px 0;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $white;
+    transition: 0.7s;
+
+    &__body{
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav{
+        flex: 1 1 auto;
+        padding-left: 133px;
+        @media(max-width: $mp2){
+            padding-left: calc(25px + (133 - 25) * ((100vw - 768px) / (1225 - 768)));
+        }
+    }
+
+    &__functional{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-right: 45px;
+        @media(max-width: $mp4){
+            padding-right: 25px;
+        }
+        @media(max-width: $mp5){
+            padding-right: 20px;
+        }
+    }
+}
+
+// we need fix that
+
+.headerShadow{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}

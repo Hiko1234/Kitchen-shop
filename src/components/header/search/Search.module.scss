@@ -1,0 +1,101 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.search{
+    cursor: pointer;
+    @media(max-width: $mp5){
+        display: none;
+    }
+}
+
+.searchAdaptive{
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    @media(min-width: $mp5){
+        display: none;
+    }
+}
+
+.searchForm{
+    width: 400px;
+    position: absolute;
+    left: -100%;
+    top: 85px;
+    transform: translate(-50%);
+    transition: 0.5s;
+
+    @media(max-width: $mp8){
+        width: 100%;
+    }
+
+    &__form {
+        position: relative;
+        width: calc(100% - 30px);
+        padding: 0 15px;
+    }
+
+    &__inputWrapper{
+        width: 100%;
+    }
+    &__input {
+        padding: 20px 73px 20px 35px;
+        width: calc(100% - 110px);
+        border: 1px solid $mainRed;
+        font-size: 18px;
+        font-weight: 400;
+        color: $black;
+        background-color: $white;
+        outline: none;
+
+        &::placeholder {
+            font-size: 18px;
+            font-weight: 400;
+            color: $placeholder;
+        }
+    }
+    &__icon{
+        position: absolute;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.searchWindow{
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    left: 0;
+    width: calc(100% - 32px);
+    min-height: 22px;
+    max-height: 430px;
+    margin: 0 15px;
+    background-color: $white;
+    border: 1px solid $mainRed;
+    overflow-y: auto;
+    @media (max-height: 600px){
+        max-height: 300px;
+    }
+    @media (max-height: 500px){
+        max-height: 250px;
+    }
+    @media (max-height: 430px){
+        max-height: 170px;
+    }
+    @media (max-height: 350px){
+        top: 70px;
+    }
+
+    &__wrapper{
+        margin: 20px;
+    }
+    &__productNotFound{
+        margin: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        color: $black;
+    }
+}

@@ -1,0 +1,48 @@
+// import variables
+@import "../../app/variables.scss";
+
+.suppliers{
+    background-color: $mainRed;
+    padding: 28px 0;
+    margin-bottom: 90px;
+    @media(max-width: $mp5){
+        padding: 16px 0;
+        margin-bottom: 50px;
+    }
+
+    &__body{
+        display: flex; 
+        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
+        @media(max-width: $mp5){
+            display: none;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $white;
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &_img{
+            object-fit: contain;
+        }
+    }
+
+    &__slider{
+        width: 100%;
+        height: 90px;
+
+        @media(min-width: $mp5){
+            display: none;
+        }
+    }
+    &__slideWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

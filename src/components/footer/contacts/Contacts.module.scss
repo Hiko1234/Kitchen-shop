@@ -1,0 +1,63 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.contacts{
+
+    &__title{
+        font-size: 20px;
+        font-weight: 700;
+        color: $white;
+        margin: 0;
+        padding-bottom: 14px;
+        @media(max-width: $mp6){
+            text-align: center;
+        }
+    }
+
+    &__contact{
+        text-decoration: none;
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+
+        &:hover{
+            opacity: 0.7;
+        }
+
+        &_wrapper{
+            display: flex;
+            gap: 13px;
+            align-items: center;
+        }
+        &_img{
+            object-fit: contain;
+        }
+    }
+
+    &__social{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        @media(max-width: $mp6){
+            justify-content: center;
+        }
+
+        &_wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: $white;
+            border-radius: 50%;
+            transition: 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        &_img{
+            object-fit: contain;
+        }
+    }
+}

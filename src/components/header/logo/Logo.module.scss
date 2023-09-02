@@ -1,0 +1,9 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.logo{
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $mainRed;
+}

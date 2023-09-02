@@ -1,0 +1,13 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.favorites{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &__img{
+        object-fit: contain;
+        object-position: center;
+    }
+}

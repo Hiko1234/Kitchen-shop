@@ -1,0 +1,66 @@
+// import variables
+@import "../variables.scss";
+
+.history{
+    padding: 81px 0 70px;
+    @media(max-width: $mp5){
+        padding: 69px 0;
+    }
+
+    &__firstItem{
+        text-align: center;
+        padding: 80px 0 60px 0;
+        @media(max-width: $mp5){
+            padding: 40px 0 30px;
+        }
+
+        &_title{
+            font-size: 36px;
+            font-weight: 600;
+            color: $mainRed;
+        }
+        &_subtext{
+            font-size: 22px;
+            font-weight: 500;
+            color: $text;
+            @media(max-width: $mp7){
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__secondItem{
+
+        &_title{
+            font-size: 26px;
+            font-weight: 500;
+            color: $mainRed;
+            text-align: center;
+        }
+        &_items{
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            @media(max-width: $mp4){
+                flex-direction: column;
+            }
+        }
+        &_item{
+            padding: 78px 50px;
+            margin: 0;
+            border-bottom: 1px solid $mainRed;
+            font-size: 22px;
+            font-weight: 500;
+            color: $text;
+            @media(max-width: $mp4){
+                padding: 50px;
+            }
+            @media(max-width: $mp6){
+                padding: 15px;
+            }
+            @media(max-width: $mp7){
+                font-size: 18px;
+            }
+        }
+    }
+}

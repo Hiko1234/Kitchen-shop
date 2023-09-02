@@ -1,0 +1,319 @@
+// import variables
+@import "../../../app/variables.scss";
+
+.card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    @media(max-width: $mp3) {
+        flex-direction: column;
+    }
+
+    &__images {
+        width: 600px;
+
+        @media(max-width: $mp3) {
+            margin: 0 auto;
+        }
+
+        @media(max-width: $mp6) {
+            width: 100%;
+        }
+
+        &_mainImgWrapper {
+            max-width: 600px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            background-color: $white;
+            box-shadow: 0px 0px 20px 0px #0000001A;
+
+            @media(max-width: $mp6) {
+                height: 350px;
+            }
+        }
+
+        &_mainImg {
+            object-fit: contain;
+            object-position: center;
+
+            @media(max-width: $mp6) {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        &_secondaryImages {
+            width: 100%;
+            display: flex;
+            gap: 12px;
+
+            @media(max-width: $mp7) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &_secondaryImg {
+            object-fit: contain;
+            object-position: center;
+            box-shadow: 0px 0px 20px 0px #0000001A;
+            background-color: $white;
+            cursor: pointer;
+            transition: 0.3s;
+
+            @media(max-width: $mp6) {
+                width: 75px;
+                height: 75px;
+            }
+        }
+
+        &_secondaryImgActive {
+            border: 1px solid $mainRed;
+        }
+    }
+
+    &__info {
+        max-width: 600px;
+
+        @media(max-width: $mp3) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &__data {
+        max-width: 100%;
+        min-height: 600px;
+        margin-bottom: 12px;
+        background-color: $white;
+        box-shadow: 0px 0px 20px 0px #0000001A;
+
+        @media(max-width: $mp3) {
+            min-height: 400px;
+        }
+
+        &_container {
+            display: flex;
+            flex-direction: column;
+            padding: 43px 35px;
+            max-width: calc(600px - 70px);
+            min-height: calc(600px - 86px);
+
+            @media(max-width: $mp2) {
+                padding: 10px;
+            }
+
+            @media(max-width: $mp3) {
+                padding: 43px 35px;
+                max-width: calc(100% - 70px);
+                min-height: calc(400px - 86px);
+            }
+
+            @media(max-width: $mp5) {
+                padding: 10px;
+                max-width: calc(100% - 20px);
+            }
+        }
+
+        &_about {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            @media(max-width: $mp2) {
+                flex-direction: column;
+            }
+
+            @media(max-width: $mp3) {
+                flex-direction: row;
+            }
+
+            @media(max-width: $mp8) {
+                flex-direction: column;
+            }
+        }
+
+        &_title {
+            font-size: 24px;
+            font-weight: 700;
+            color: $black;
+            margin: 0;
+        }
+
+        &_producer {
+            font-size: 24px;
+            font-weight: 700;
+            color: $lightRed;
+        }
+
+        &_list {
+            list-style: square;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        &_li {
+            font-size: 16px;
+            font-weight: 500;
+            color: $black;
+            padding-bottom: 10px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        &_color {
+            font-size: 16px;
+            font-weight: 500;
+            color: $black;
+            margin: 0 0 15px 0;
+
+            span {
+                &::first-letter {
+                    text-transform: lowercase;
+                }
+            }
+        }
+
+        &_colorBtnWrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &_colorBtn {
+            padding: 5px 20px;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 500;
+            color: $black;
+            border: 1px solid $black;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        &_colorBtnActive {
+            opacity: 1;
+        }
+
+        &_price {
+            font-size: 24px;
+            font-weight: 700;
+            color: $black;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        &_inStock {
+            font-size: 16px;
+            font-weight: 500;
+            color: $mainRed;
+            margin: 0;
+            padding-bottom: 20px;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__buttons {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-right: auto;
+    }
+}
+
+.tab__title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $brown;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.characteristic {
+    padding: 35px 60px;
+    margin-top: 45px;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+
+    @media(max-width: $mp5) {
+        padding: 15px;
+    }
+
+    &__features {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &_feature {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 15px;
+            justify-content: space-between;
+            width: calc(50% - 44px);
+            padding-bottom: 16px;
+            border-bottom: 1px solid $darkGray;
+            font-size: 18px;
+            font-weight: 500;
+            color: $darkGrey;
+
+            @media(max-width: $mp3) {
+                width: 100%;
+                gap: 50px;
+            }
+
+            @media(max-width: $mp3) {
+                width: 100%;
+                gap: 15px;
+            }
+        }
+    }
+}
+
+.description {
+    padding: 35px 60px;
+    margin-top: 45px;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+
+    @media(max-width: $mp5) {
+        padding: 15px;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 400;
+        color: $black;
+        margin: 0;
+    }
+}
+
+.new {
+
+    &__title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: $black;
+    }
+
+    &__cards {
+        display: flex;
+        gap: 5px;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media(max-width: $mp4) {
+            justify-content: space-evenly;
+        }
+    }
+}
