@@ -16,18 +16,19 @@ import Burger from './burger'
 const Header = () => {
     const [scrolled, setScrolled] = useState<boolean>(false);
 
-    const scrollY = () => {
-        window.scrollY > 20 ? setScrolled(true) : setScrolled(false);
-    };
-
-    window.addEventListener("scroll", scrollY);
+    useEffect(() => {
+        const scrollY = () => {
+            window.scrollY > 20 ? setScrolled(true) : setScrolled(false);
+        };
+        window.addEventListener("scroll", scrollY);
+    }, [])
 
     return (
         <>
             <header className={!scrolled ? s.header : `${s.header} ${s.headerShadow}`}>
                 <Container key="container">
                     <div className={s.header__body}>
-                        <Logo key="logo"/>
+                        <Logo key="logo" />
                         <div className={s.header__nav}>
                             <Nav key="nav" />
                         </div>
