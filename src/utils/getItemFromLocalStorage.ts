@@ -1,4 +1,4 @@
-export const getItemFromLS = (item: any) =>{
+export const getItemFromLS = (item: any) => {
     const data = localStorage.getItem(item);
-    return data ?  JSON.parse(data) : [];
+    return data ? JSON.parse(data) : [];
 }
