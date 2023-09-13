@@ -10,29 +10,37 @@ import icon from "../../../assets/images/header/cart.png"
 import Link from 'next/link'
 // import redux
 import { useSelector } from 'react-redux'
+// import utils
+import { getItemFromLS } from '@/utils/getItemFromLocalStorage';
 
 const Cart = () => {
-  const {items} = useSelector((state: any) => state.cart);
+  const { items } = useSelector((state: any) => state.cart);
   const isMounted = useRef(false);
+  const [data, setData] = useState([])
 
-  // counter
-  const totalCount = items.reduce((sum: any, item: any) => sum + item.count, 0);
-  
   // add to localStorage
-  useEffect(()=>{
-    if (isMounted.current){
+  useEffect(() => {
+    if (isMounted.current) {
       const json = JSON.stringify(items);
       localStorage.setItem("cart", json)
     }
     isMounted.current = true;
   }, [items]);
 
+  useEffect(() => {
+    const cartData = getItemFromLS("cart");
+    setData(cartData);
+  }, [items])
+
+  // counter
+  const totalCount = data.reduce((sum: any, item: any) => sum + item.count, 0);
+
   return (
     <>
       <div className={s.cart}>
         <Link className={s.cart__link} href="/cart">
           <Image className={s.cart__img} src={icon} alt="Cart" width={29} height={24} />
-          {items.length != 0 ? (
+          {data.length !== 0 ? (
             <span className={s.cart__lenght}>{totalCount}</span>
           ) : (
             null

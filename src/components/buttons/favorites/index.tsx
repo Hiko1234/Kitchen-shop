@@ -22,20 +22,20 @@ const FavoritesBtn = (props: any) => {
   // check the object for being in the array
   useEffect(() => {
     const favoritesData = getItemFromLS("favorites");
-    if (favoritesData.length != 0) {
+    if (favoritesData?.length != 0) {
       for (const el of favoritesData) {
-        if (product.id == el.id) {
+        if (product?.id == el.id) {
           return setFavorites(true);
         }
       }
     } else {
       return setFavorites(false)
     }
-  }, [items])
+  }, [product.id, items])
 
   const onClick = () => {
     if (favorites) {
-      dispatch(removeFavorites(product.id))
+      dispatch(removeFavorites(product?.id))
       setFavorites(false);
     } else {
       dispatch(addFavorites(product))

@@ -1,10 +1,11 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import styles
 import s from "./SingleProduct.module.scss"
 // import components
 import CardSingleProduct from '@/components/cards/singleProduct'
+import Container from '@/components/container'
 // import router
 import { usePathname } from 'next/navigation'
 // import data
@@ -24,7 +25,9 @@ const SingleProduct = () => {
         <>
             <div className={s.singleProduct}>
                 <div className={s.singleProduct__card}>
-                    <CardSingleProduct key={product.id} product={product} />
+                    {products.length >= parseInt(id) ? (
+                        <CardSingleProduct key={product.id} product={product} />
+                    ) : <Container key="container"><p className={s.singleProduct__error}>Цієї сторінки не існує</p></Container>}
                 </div>
             </div>
         </>

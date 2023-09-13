@@ -1,13 +1,21 @@
 // import variables
 @import "../../variables.scss";
 
-.singleProduct{
+.singleProduct {
     padding: 81px 0 70px;
-    @media(max-width: $mp5){
+
+    @media(max-width: $mp5) {
         padding: 69px 0;
     }
 
-    &__card{
+    &__card {
         padding: 53px 0;
+    }
+
+    &__error {
+        font-size: 20px;
+        font-weight: 700;
+        color: $mainRed;
+        margin: 25px 0;
     }
 }

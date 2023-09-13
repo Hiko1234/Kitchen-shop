@@ -12,11 +12,11 @@
     &__functional{
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         flex-wrap: wrap;
         column-gap: 20px;
         row-gap: 10px;
         padding: 25px 0;
-        justify-content: end;
     }
 
     &__title{

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 // import styles
 import s from "./Pagination.module.scss"
 // import img
@@ -11,13 +11,15 @@ const Pagination = (props: any) => {
     const { itemsPerPage, totalItems, paginate } = props;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [actualPages, setActualPages] = useState([]);
+    const [actualPages, setActualPages] = useState<number[]>([]);
 
-    const pageNumbers: any = [];
-
-    for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-    }
+    const pageNumbers = useMemo(() => {
+        const numbers = [];
+        for (let i = 1; i <= totalPages; i++) {
+            numbers.push(i);
+        }
+        return numbers;
+    }, [totalPages]);
 
     useEffect(() => {
         if (pageNumbers.length <= 7) {
@@ -26,17 +28,20 @@ const Pagination = (props: any) => {
             if (currentPage == 1 || currentPage == 2 || currentPage == 3) {
                 const pages = pageNumbers.slice(0, 7);
                 setActualPages(pages);
-            } else if (currentPage == currentPage) {
+            } else {
                 const pages = pageNumbers.slice(currentPage - 4, currentPage + 3);
                 setActualPages(pages);
             }
         }
-    }, [currentPage, totalPages]);
+    }, [currentPage, pageNumbers]);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [totalPages]);
 
     useEffect(() => {
         paginate(1);
-        setCurrentPage(1);
-    }, [totalPages])
+    }, [currentPage, paginate]);
 
     return (
         <>
