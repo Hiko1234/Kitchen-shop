@@ -39,10 +39,6 @@ const Pagination = (props: any) => {
         setCurrentPage(1);
     }, [totalPages]);
 
-    useEffect(() => {
-        paginate(1);
-    }, [currentPage, paginate]);
-
     return (
         <>
             {totalItems != 0 ? (
