@@ -39,11 +39,11 @@ const Favorites = () => {
       <div className={s.favorites}>
         <Link className={s.favorites__link} href="/favorites">
           <Image className={s.favorites__img} src={icon} alt="favorites" width={24} height={22} />
-          {data.length !== 0 ? (
+          {data?.length !== 0 ? (
             <span className={s.favorites__lenght}>
               <div className={s.favotires__lenght_wrapper}>
                 <Image className={s.favorites__lenght_img} src={icon1} alt="favorites" width={20} height={20} />
-                <span className={s.favorites__lenght_counter}>{data.length}</span>
+                <span className={s.favorites__lenght_counter}>{data?.length}</span>
               </div>
             </span>
           ) : (

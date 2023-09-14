@@ -40,11 +40,11 @@ export default function Favorites() {
       <div className={s.favorites}>
         <h1 className={s.favorites__title}>Список бажання</h1>
         <Container key="container">
-          {data.length !== 0 ? (
+          {data?.length !== 0 ? (
             <>
               <button className={s.favorites__clearTop} onClick={() => setPopup(true)}>Очистити список бажаннь</button>
               <div className={s.favorites__cards}>
-                {data.map((product: any) => (
+                {data?.map((product: any) => (
                   <FavoritesProduct key={product.id} product={product} />
                 ))}
               </div>

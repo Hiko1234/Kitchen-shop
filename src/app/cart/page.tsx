@@ -51,14 +51,14 @@ export default function CartPage() {
             <main className={s.cart}>
                 <h1 className={s.cart__title}>Кошик</h1>
                 <Container key="container">
-                    {data.length !== 0 ? (
+                    {data?.length !== 0 ? (
                         <>
                             <div className={s.cart__functional}>
                                 <button className={s.cart__functional_btn} onClick={() => setPopup(true)}>Очистити кошик</button>
                                 <button className={s.cart__functional_btn} onClick={() => delivery == false ? setDelivery(true) : setDelivery(false)}>Оформити покупку</button>
                             </div>
                             <div className={s.cart__cards}>
-                                {data.map((product: any) => (
+                                {data?.map((product: any) => (
                                     <CartProducts key={product.id} product={product} />
                                 ))}
                             </div>

@@ -40,7 +40,7 @@ const Cart = () => {
       <div className={s.cart}>
         <Link className={s.cart__link} href="/cart">
           <Image className={s.cart__img} src={icon} alt="Cart" width={29} height={24} />
-          {data.length !== 0 ? (
+          {data?.length !== 0 ? (
             <span className={s.cart__lenght}>{totalCount}</span>
           ) : (
             null
