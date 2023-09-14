@@ -5,19 +5,18 @@ import React, { useState } from 'react'
 import s from "./SingleProduct.module.scss"
 // import components
 import CardSingleProduct from '@/components/cards/singleProduct'
+import Container from '@/components/container'
 // import router
 import { usePathname } from 'next/navigation'
 // import data
 import productsList from "@/data/products/products.json";
 // import utils
 import { getItemById } from '@/utils/getItemById'
-// import not found
-import { notFound } from 'next/navigation'
 
 const SingleProduct = () => {
     // Отримання id з router.query
     const pathname = usePathname();
-    const id = pathname.slice(9);
+    const id = pathname.slice(9, -1);
 
     const [products, setProducts] = useState(Object.values(productsList));
     const [product, setProduct] = useState(getItemById(id, products));
@@ -28,7 +27,7 @@ const SingleProduct = () => {
                 <div className={s.singleProduct__card}>
                     {products.length >= parseInt(id) ? (
                         <CardSingleProduct key={product.id} product={product} />
-                    ) : notFound()}
+                    ) : <Container><p className={s.singleProduct__error}>Сторінку не знайдено</p></Container>}
                 </div>
             </div>
         </>
