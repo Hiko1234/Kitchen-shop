@@ -1,6 +1,6 @@
 import React from 'react'
 // import styles 
-import s from './footer.module.scss'
+import s from './Footer.module.scss'
 // import components
 import Container from '../container'
 import FooterLogo from './logo'
