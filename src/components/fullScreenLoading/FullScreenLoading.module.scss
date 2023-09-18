@@ -1,7 +1,24 @@
 // import variables
 @import "../../app/variables.scss";
 
-.loading{
+.loadingWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+
+    &Active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.loading {
     width: 5em;
     height: 5em;
     border-top: 1em solid $mainRed;
@@ -10,7 +27,7 @@
     margin: 20px auto;
     animation: spinner 2.5s linear infinite;
 
-    &__circle{
+    &__circle {
         width: 1em;
         height: 1em;
         background-color: $mainRed;

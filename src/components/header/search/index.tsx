@@ -32,8 +32,8 @@ const Search = () => {
       })
     }
   }
-  
-  const onClick = ()=>{
+
+  const onClick = () => {
     setHideOrShow(() => {
       return { left: "-100%" }
     });
@@ -59,7 +59,7 @@ const Search = () => {
             <input className={s.searchForm__input} value={search} type="text" placeholder='Пошук' onChange={(e) => {
               setSearch(e.target.value);
             }} />
-            <div className={s.searchForm__icon}><Image src={icon} alt="Search" width={30.5} height={30.5} /></div>
+            <div className={s.searchForm__icon}><Image src={icon} alt="Search" width={22.5} height={22.5} /></div>
           </div>
         </form>
         {search.length > 0 ? (
@@ -82,6 +82,10 @@ const Search = () => {
           null
         )}
       </div>
+      <div className={isOpen == true ? `${s.searchForm__bg} ${s.searchForm__bgActive}` : s.searchForm__bg} onClick={()=>{
+        onClick();
+        setIsOpen(false);
+      }}></div>
     </>
   )
 }

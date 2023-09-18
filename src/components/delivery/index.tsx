@@ -10,7 +10,7 @@ import Image from 'next/image'
 import icon from "../../assets/images/arrow.png"
 
 
-const Delivery = ({ delivery, setDelivery }: any) => {
+const Delivery = ({ delivery, setDelivery, setPopup, setPopupError, setLoading }: any) => {
     // function open
     const handle = () => {
         setDelivery((prev: any) => !prev);
@@ -21,7 +21,7 @@ const Delivery = ({ delivery, setDelivery }: any) => {
             <div className={s.delivery}>
                 <div className={s.delivery__handle} onClick={handle}><span>Доставка</span><Image className={delivery ? `${s.delivery__handle_img} ${s.delivery__handle_imgActive}` : s.delivery__handle_img} src={icon} alt="Arrow" width={19} height={10} /></div>
                 <div className={delivery ? `${s.delivery__form} ${s.delivery__formActive}` : s.delivery__form}>
-                    <DeliveryForm key="deliveryform" />
+                    <DeliveryForm key="deliveryform" setPopup={setPopup} setPopupError={setPopupError} setLoading={setLoading} />
                 </div>
             </div>
         </>

@@ -23,6 +23,7 @@
 .searchForm{
     width: 400px;
     position: absolute;
+    z-index: 1;
     left: -100%;
     top: 85px;
     transform: translate(-50%);
@@ -34,6 +35,7 @@
 
     &__form {
         position: relative;
+        z-index: 1;
         width: calc(100% - 30px);
         padding: 0 15px;
     }
@@ -59,8 +61,25 @@
     }
     &__icon{
         position: absolute;
-        top: 15px;
+        top: 20px;
         right: 35px;
+    }
+
+    &__bg{
+        position: absolute;
+        top: 82px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 82px);
+        background-color: transparent;
+        transition: 0.5s;
+        @media(max-width: $mp5){
+            top: 70px;
+            height: calc(100vh - 70px);
+        }
+    }
+    &__bgActive{
+        left: 0;
     }
 }
 

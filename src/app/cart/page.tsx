@@ -8,6 +8,8 @@ import Container from '@/components/container'
 import CartProducts from '@/components/cards/cartProducts'
 import Delivery from '@/components/delivery'
 import Popup from '@/components/popup'
+import FullScreenLoading from '@/components/fullScreenLoading'
+import PopupHandle from '@/components/popupHandle'
 // import link
 import Link from 'next/link'
 // import redux
@@ -23,6 +25,13 @@ export default function CartPage() {
     const [popup, setPopup] = useState<boolean>(false);
     const [data, setData] = useState([])
     const [delivery, setDelivery] = useState<boolean>(false);
+    // loading
+    const [loading, setLoading] = useState<boolean>(false);
+    // popup
+    const [popupTrue, setPopupTrue] = useState<boolean>(false);
+    const popupGood = { title: "Форма відправлена", text: "Дякуємо" };
+    const [popupError, setPopupError] = useState<boolean>(false);
+    const popupFalse = { title: "Виникла помилка", text: "Вибачте за незручності" };
 
     // counter
     const totalCount = items ? items.reduce((sum: any, item: any) => sum + item.count, 0) : 0;
@@ -67,7 +76,7 @@ export default function CartPage() {
                                 <p className={s.cart__totalPrice_price}>{price} грн</p>
                             </div>
                             <div className={s.card__delivery}>
-                                <Delivery delivery={delivery} setDelivery={setDelivery} />
+                                <Delivery delivery={delivery} setDelivery={setDelivery} setPopup={setPopupTrue} setPopupError={setPopupError} setLoading={setLoading} />
                             </div>
                         </>
                     ) : (
@@ -82,6 +91,9 @@ export default function CartPage() {
                 {popup && (
                     <Popup key="popup" onClick={onClickClear} close={closePopup} />
                 )}
+                <FullScreenLoading key="loading" onLoading={loading} />
+                <PopupHandle key="popup-1" popup={popupTrue} setPopup={setPopupTrue} text={popupGood} />
+                <PopupHandle key="popup-2" popup={popupError} setPopup={setPopupError} text={popupFalse} />
             </main>
         </>
     )
